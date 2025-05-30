@@ -44,6 +44,11 @@
             key-positions = <11 12 13>;
             bindings = <&tog TVP1>;
         };
+
+        bacskpace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <9 8>;
+        };
     };
 
     macros {
@@ -53,13 +58,20 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LSHFT>,
+                <&kp LALT>,
                 <&macro_tap>,
-                <&kp N2>,
+                <&kp TILDE>,
                 <&macro_release>,
                 <&kp LSHFT>,
                 <&macro_tap>,
                 <&kp G &kp I &kp F>;
+        };
+
+        enie: enie {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp TILDE &kp N>;
+            label = "ENIE";
         };
     };
 
