@@ -51,22 +51,22 @@
         };
 
         l-brace {
-            bindings = <&kp RA(NUMBER_7)>; // { = AltGr + 7
+            bindings = <&kp LC(LALT(NUMBER_7))>; // { = Ctrl + Alt + 7
             key-positions = <1 2 3>;
         };
         
         r-brace {
-            bindings = <&kp RA(NUMBER_0)>; // } = AltGr + 0
+            bindings = <&kp LC(LALT(NUMBER_0))>; // } = Ctrl + Alt + 0
             key-positions = <6 7 8>;
         };
         
         l-bracke {
-            bindings = <&kp RA(NUMBER_8)>; // [ = AltGr + 8
+            bindings = <&kp LC(LALT(NUMBER_8))>; // [ = Ctrl + Alt + 8
             key-positions = <11 12 13>;
         };
         
         r-bracke {
-            bindings = <&kp RA(NUMBER_9)>; // ] = AltGr + 9
+            bindings = <&kp LC(LALT(NUMBER_9))>; // ] = Ctrl + Alt + 9
             key-positions = <16 17 18>;
         };
         
