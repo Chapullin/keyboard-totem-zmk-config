@@ -114,14 +114,14 @@
         right_brace: right_brace {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT &macro_tap &kp PLUS &macro_release &kp LALT>; // Alt + + key = }
+            bindings = <&macro_press &kp LALT &macro_tap &kp SEMI &macro_release &kp LALT>; // Alt + ç key = }
             label = "RIGHT_BRACE";
         };
 
         left_bracket: left_bracket {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT &macro_tap &kp LBKT &macro_release &kp LALT>; // Alt + [ physical key = [
+            bindings = <&macro_press &kp LALT &macro_tap &kp GRAVE &macro_release &kp LALT>; // Alt + ` key = [
             label = "LEFT_BRACKET";
         };
 
