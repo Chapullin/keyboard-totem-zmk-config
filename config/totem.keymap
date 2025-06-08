@@ -51,24 +51,25 @@
         };
 
         l-brace {
-            bindings = <&kp LEFT_BRACE>;
+            bindings = <&kp RA(NUMBER_7)>;  // AltGr + 7 = {
             key-positions = <1 2 3>;
         };
-
+        
         r-brace {
-            bindings = <&kp RIGHT_BRACE>;
+            bindings = <&kp RA(NUMBER_0)>;  // AltGr + 0 = }
             key-positions = <6 7 8>;
         };
-
+        
         l-bracke {
-            bindings = <&kp LEFT_BRACKET>;
+            bindings = <&kp RA(NUMBER_8)>;  // AltGr + 8 = [
             key-positions = <11 12 13>;
         };
-
+        
         r-bracke {
-            bindings = <&kp RIGHT_BRACKET>;
+            bindings = <&kp RA(NUMBER_9)>;  // AltGr + 9 = ]
             key-positions = <16 17 18>;
         };
+
 
         l-parenth {
             bindings = <&kp LEFT_PARENTHESIS>;
