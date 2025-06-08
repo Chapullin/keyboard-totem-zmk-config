@@ -100,35 +100,35 @@
         enie: enie {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp TILDE &kp N>;
+            bindings = <&kp RALT &kp SEMI>; // Option + ç = ñ
             label = "ENIE";
         };
 
         left_brace: left_brace {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RALT &kp APOS>; // Option + ´ = {
+            bindings = <&kp RALT &kp LBKT>; // Try Option + [ key
             label = "LEFT_BRACE";
         };
 
         right_brace: right_brace {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RALT &kp SEMI>; // Option + ç = }
+            bindings = <&kp RALT &kp RBKT>; // Try Option + ] key
             label = "RIGHT_BRACE";
         };
 
         left_bracket: left_bracket {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RALT &kp GRAVE>; // Option + ` = [
+            bindings = <&kp RALT &kp N8>; // Try Option + 8
             label = "LEFT_BRACKET";
         };
 
         right_bracket: right_bracket {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RALT &kp EQUAL>; // Option + + = ]
+            bindings = <&kp RALT &kp N9>; // Try Option + 9
             label = "RIGHT_BRACKET";
         };
     };
