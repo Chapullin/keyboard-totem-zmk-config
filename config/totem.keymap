@@ -51,32 +51,32 @@
         };
 
         l-brace {
-            bindings = <&kp LBRC>; // Direct left brace {
+            bindings = <&left_brace>; // Macro: AltGr + 7 = {
             key-positions = <1 2 3>;
         };
         
         r-brace {
-            bindings = <&kp RBRC>; // Direct right brace }
+            bindings = <&right_brace>; // Macro: AltGr + 0 = }
             key-positions = <6 7 8>;
         };
         
         l-bracket {
-            bindings = <&kp LBKT>; // Direct left bracket [
+            bindings = <&left_bracket>; // Macro: AltGr + ` = [
             key-positions = <11 12 13>;
         };
         
         r-bracket {
-            bindings = <&kp RBKT>; // Direct right bracket ]
+            bindings = <&right_bracket>; // Macro: AltGr + + = ]
             key-positions = <16 17 18>;
         };
         
         l-parenth {
-            bindings = <&kp LPAR>; // Direct left parenthesis (
+            bindings = <&kp LS(N8)>; // Spanish: Shift + 8 = (
             key-positions = <22 23 24>;
         };
         
         r-parenth {
-            bindings = <&kp RPAR>; // Direct right parenthesis )
+            bindings = <&kp LS(N9)>; // Spanish: Shift + 9 = )
             key-positions = <27 28 29>;
         };
     };
@@ -102,6 +102,34 @@
             #binding-cells = <0>;
             bindings = <&kp TILDE &kp N>;
             label = "ENIE";
+        };
+
+        left_brace: left_brace {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RALT &kp N7>;
+            label = "LEFT_BRACE";
+        };
+
+        right_brace: right_brace {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RALT &kp N0>;
+            label = "RIGHT_BRACE";
+        };
+
+        left_bracket: left_bracket {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RALT &kp LBKT>;
+            label = "LEFT_BRACKET";
+        };
+
+        right_bracket: right_bracket {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RALT &kp RBKT>;
+            label = "RIGHT_BRACKET";
         };
     };
 
