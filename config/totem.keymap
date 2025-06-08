@@ -51,32 +51,32 @@
         };
 
         l-brace {
-            bindings = <&kp LCTRL &kp LALT &kp NUMBER_7>; // Ctrl + Alt + 7
+            bindings = <&kp LBRC>; // Direct left brace {
             key-positions = <1 2 3>;
         };
         
         r-brace {
-            bindings = <&kp LCTRL &kp LALT &kp NUMBER_0>; // Ctrl + Alt + 0
+            bindings = <&kp RBRC>; // Direct right brace }
             key-positions = <6 7 8>;
         };
         
-        l-bracke {
-            bindings = <&kp LCTRL &kp LALT &kp NUMBER_8>; // Ctrl + Alt + 8
+        l-bracket {
+            bindings = <&kp LBKT>; // Direct left bracket [
             key-positions = <11 12 13>;
         };
         
-        r-bracke {
-            bindings = <&kp LCTRL &kp LALT &kp NUMBER_9>; // Ctrl + Alt + 9
+        r-bracket {
+            bindings = <&kp RBKT>; // Direct right bracket ]
             key-positions = <16 17 18>;
         };
         
         l-parenth {
-            bindings = <&kp LS &kp NUMBER_9>; // Shift + 9
+            bindings = <&kp LPAR>; // Direct left parenthesis (
             key-positions = <22 23 24>;
         };
         
         r-parenth {
-            bindings = <&kp LS &kp NUMBER_0>; // Shift + 0
+            bindings = <&kp RPAR>; // Direct right parenthesis )
             key-positions = <27 28 29>;
         };
     };
