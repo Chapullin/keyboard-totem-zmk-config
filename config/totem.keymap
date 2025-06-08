@@ -107,28 +107,28 @@
         left_brace: left_brace {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RALT &kp N7>;
+            bindings = <&kp RALT &kp APOS>; // Option + ´ = {
             label = "LEFT_BRACE";
         };
 
         right_brace: right_brace {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RALT &kp N0>;
+            bindings = <&kp RALT &kp SEMI>; // Option + ç = }
             label = "RIGHT_BRACE";
         };
 
         left_bracket: left_bracket {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RALT &kp LBKT>;
+            bindings = <&kp RALT &kp GRAVE>; // Option + ` = [
             label = "LEFT_BRACKET";
         };
 
         right_bracket: right_bracket {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RALT &kp RBKT>;
+            bindings = <&kp RALT &kp EQUAL>; // Option + + = ]
             label = "RIGHT_BRACKET";
         };
     };
