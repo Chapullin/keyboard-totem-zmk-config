@@ -107,28 +107,28 @@
         left_brace: left_brace {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RALT &kp APOS>; // Option + ´ position = {
+            bindings = <&macro_press &kp LALT &macro_tap &kp APOS &macro_release &kp LALT>; // Alt + ´ = {
             label = "LEFT_BRACE";
         };
 
         right_brace: right_brace {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RALT &kp SEMI>; // Option + ç position = }
+            bindings = <&macro_press &kp LALT &macro_tap &kp SEMI &macro_release &kp LALT>; // Alt + ç = }
             label = "RIGHT_BRACE";
         };
 
         left_bracket: left_bracket {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RALT &kp LBKT>; // Option + [ position = [
+            bindings = <&macro_press &kp LALT &macro_tap &kp GRAVE &macro_release &kp LALT>; // Alt + ` = [
             label = "LEFT_BRACKET";
         };
 
         right_bracket: right_bracket {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RALT &kp RBKT>; // Option + ] position = ]
+            bindings = <&macro_press &kp LALT &macro_tap &kp EQUAL &macro_release &kp LALT>; // Alt + + = ]
             label = "RIGHT_BRACKET";
         };
     };
