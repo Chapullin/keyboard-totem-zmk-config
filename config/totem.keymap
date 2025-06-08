@@ -82,22 +82,22 @@
 
         // TEMPORARY TEST COMBOS - DELETE AFTER RESOLVING SYMBOL ISSUE
         test-brace-1 {
-            bindings = <&macro_press &kp LALT &macro_tap &kp COMMA &macro_release &kp LALT>; // Alt + , = test }
+            bindings = <&macro_press &kp LALT &macro_tap &kp N0 &macro_release &kp LALT>; // Alt + 0 = test }
             key-positions = <22 23>;
         };
         
         test-brace-2 {
-            bindings = <&macro_press &kp LALT &macro_tap &kp DOT &macro_release &kp LALT>; // Alt + . = test }
+            bindings = <&macro_press &kp LALT &macro_tap &kp N7 &macro_release &kp LALT>; // Alt + 7 = test }
             key-positions = <23 24>;
         };
         
         test-bracket-1 {
-            bindings = <&macro_press &kp LALT &macro_tap &kp FSLH &macro_release &kp LALT>; // Alt + / = test [
+            bindings = <&macro_press &kp LALT &macro_tap &kp N9 &macro_release &kp LALT>; // Alt + 9 = test [
             key-positions = <27 28>;
         };
         
         test-bracket-2 {
-            bindings = <&macro_press &kp LALT &macro_tap &kp LBKT &macro_release &kp LALT>; // Alt + [ = test [
+            bindings = <&macro_press &kp LALT &macro_tap &kp TILDE &macro_release &kp LALT>; // Alt + ~ = test [
             key-positions = <28 29>;
         };
         // END TEMPORARY TEST COMBOS
