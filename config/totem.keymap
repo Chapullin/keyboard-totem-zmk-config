@@ -51,58 +51,36 @@
         };
 
         l-brace {
-            bindings = <&left_brace>; // Macro: AltGr + 7 = {
+            bindings = <&kp LBRC>; // English layout: direct { keycode
             key-positions = <1 2 3>;
         };
 
         r-brace {
-            bindings = <&right_brace>; // Macro: AltGr + 0 = }
+            bindings = <&kp RBRC>; // English layout: direct } keycode
             key-positions = <6 7 8>;
         };
 
         l-bracket {
-            bindings = <&left_bracket>; // Macro: AltGr + ` = [
+            bindings = <&kp LBKT>; // English layout: direct [ keycode
             key-positions = <11 12 13>;
         };
 
         r-bracket {
-            bindings = <&right_bracket>; // Macro: AltGr + + = ]
+            bindings = <&kp RBKT>; // English layout: direct ] keycode
             key-positions = <16 17 18>;
         };
 
         l-parenth {
-            bindings = <&kp LS(N8)>; // Spanish: Shift + 8 = (
+            bindings = <&kp LPAR>; // English layout: direct ( keycode
             key-positions = <22 23 24>;
         };
 
         r-parenth {
-            bindings = <&kp LS(N9)>; // Spanish: Shift + 9 = )
+            bindings = <&kp RPAR>; // English layout: direct ) keycode
             key-positions = <27 28 29>;
         };
 
-        // TEMPORARY TEST COMBOS - DELETE AFTER RESOLVING SYMBOL ISSUE
 
-        test-brace-1 {
-            bindings = <&macro_press &kp LALT &macro_tap &kp N0 &macro_release &kp LALT>; // Alt + 0 = test }
-            key-positions = <22 23>;
-        };
-
-        test-brace-2 {
-            bindings = <&macro_press &kp LALT &macro_tap &kp N7 &macro_release &kp LALT>; // Alt + 7 = test }
-            key-positions = <23 24>;
-        };
-
-        test-bracket-1 {
-            bindings = <&macro_press &kp LALT &macro_tap &kp N9 &macro_release &kp LALT>; // Alt + 9 = test [
-            key-positions = <27 28>;
-        };
-
-        test-bracket-2 {
-            bindings = <&macro_press &kp LALT &macro_tap &kp TILDE &macro_release &kp LALT>; // Alt + ~ = test [
-            key-positions = <28 29>;
-        };
-
-        // END TEMPORARY TEST COMBOS
     };
 
     macros {
@@ -128,61 +106,7 @@
             label = "ENIE";
         };
 
-        left_brace: left_brace {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LALT>,
-                <&macro_tap>,
-                <&kp APOS>,
-                <&macro_release>,
-                <&kp LALT>;
- // Alt + ´ = {
-            label = "LEFT_BRACE";
-        };
 
-        right_brace: right_brace {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LALT>,
-                <&macro_tap>,
-                <&kp EQUAL>,
-                <&macro_release>,
-                <&kp LALT>;
- // Alt + = key = }
-            label = "RIGHT_BRACE";
-        };
-
-        left_bracket: left_bracket {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LALT>,
-                <&macro_tap>,
-                <&kp N8>,
-                <&macro_release>,
-                <&kp LALT>;
- // Alt + 8 = [
-            label = "LEFT_BRACKET";
-        };
-
-        right_bracket: right_bracket {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LALT>,
-                <&macro_tap>,
-                <&kp RBKT>,
-                <&macro_release>,
-                <&kp LALT>;
- // Alt + ] physical key = ]
-            label = "RIGHT_BRACKET";
-        };
     };
 
     keymap {
