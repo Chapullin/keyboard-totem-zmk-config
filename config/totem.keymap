@@ -80,10 +80,11 @@
             key-positions = <1 2>; // W+E combo  
         };
 
-        acute_accent {
-            bindings = <&macro_press &kp LALT &macro_tap &kp E &macro_release &kp LALT>;
+        acute_combo {
+            bindings = <&acute>;
             key-positions = <2 3>; // E+R combo for ´ (acute accent)
             timeout-ms = <50>;
+            layers = <0>;
         };
 
 
@@ -113,6 +114,17 @@
                        <&macro_release &kp LALT>,
                        <&macro_tap &kp N>;
             label = "ENIE";
+        };
+
+        acute: acute_accent {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings = <&macro_press &kp RALT>,
+                      <&macro_tap &kp E>,
+                      <&macro_release &kp RALT>;
+            label = "ACUTE_ACCENT";
         };
     };
 
