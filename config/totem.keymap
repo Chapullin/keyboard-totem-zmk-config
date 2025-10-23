@@ -37,8 +37,6 @@
             bindings = <&kp ESC>;
         };
 
-
-
         bacskpace {
             bindings = <&kp BACKSPACE>;
             key-positions = <9 8>;
@@ -75,6 +73,7 @@
         };
 
         // JavaScript symbols - frequent use
+
         js-backtick {
             bindings = <&kp GRAVE>; // ` for template literals
             key-positions = <1 2>; // W+E combo  
@@ -86,8 +85,6 @@
             timeout-ms = <50>;
             layers = <0>;
         };
-
-
     };
 
     macros {
@@ -109,10 +106,16 @@
         enie: enie {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT>, 
-                       <&macro_tap &kp N>, 
-                       <&macro_release &kp LALT>,
-                       <&macro_tap &kp N>;
+            bindings =
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp N>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp N>;
+
             label = "ENIE";
         };
 
@@ -121,9 +124,14 @@
             #binding-cells = <0>;
             wait-ms = <0>;
             tap-ms = <0>;
-            bindings = <&macro_press &kp RALT>,
-                      <&macro_tap &kp E>,
-                      <&macro_release &kp RALT>;
+            bindings =
+                <&macro_press>,
+                <&kp RALT>,
+                <&macro_tap>,
+                <&kp E>,
+                <&macro_release>,
+                <&kp RALT>;
+
             label = "ACUTE_ACCENT";
         };
     };
@@ -150,10 +158,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-              &kp Q       &kp W           &kp E        &kp R        &kp T        &kp Y    &kp U        &kp I        &kp O       &kp P
-              &mt LGUI A  &mt LEFT_ALT S  &mt LCTRL D  &mt LSHFT F  &kp G        &kp H    &mt RSHFT J  &mt RCTRL K  &mt RALT L  &enie
-&kp MINUS     &kp Z       &kp X           &kp C        &kp V        &kp B        &kp N    &kp M        &kp COMMA    &kp DOT     &kp FSLH   &kp QUESTION
-                                          &kp DEL      &lt NAV TAB  &kp SPACE    &kp RET  &lt SYM ESC  &kp BSPC
+           &kp Q       &kp W           &kp E        &kp R        &kp T        &kp Y    &kp U             &kp I        &kp O       &kp P
+           &mt LGUI A  &mt LEFT_ALT S  &mt LCTRL D  &mt LSHFT F  &kp G        &kp H    &mt RSHFT J       &mt RCTRL K  &mt RALT L  &enie
+&kp MINUS  &kp Z       &kp X           &kp C        &kp V        &kp B        &kp N    &kp M             &kp COMMA    &kp DOT     &kp FSLH  &kp QUESTION
+                                       &kp DEL      &lt NAV TAB  &kp SPACE    &kp RET  &lt SYM NUMBER_0  &kp BSPC
             >;
         };
 
@@ -176,10 +184,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-        &kp ESC    &bt BT_CLR  &kp UP    &kp EQUAL  &kp LBRC    &kp RBRC  &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_PLUS
-        &kp LSHFT  &kp LEFT    &kp DOWN  &kp RIGHT  &kp LBKT    &kp RBKT  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_MINUS
-&trans  &kp DEL    &kp PG_UP   &kp CAPS  &kp PG_DN  &kp LPAR    &kp RPAR  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_MULTIPLY  &trans
-                               &trans    &trans     &trans      &mo ADJ   &kp KP_N0  &trans
+        &kp ESC    &kp NUMBER_2  &kp UP    &kp EQUAL  &kp LBRC    &kp RBRC  &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_PLUS
+        &kp LSHFT  &kp LEFT      &kp DOWN  &kp RIGHT  &kp LBKT    &kp RBKT  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_MINUS
+&trans  &kp DEL    &kp PG_UP     &kp CAPS  &kp PG_DN  &kp LPAR    &kp RPAR  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_MULTIPLY  &trans
+                                 &trans    &trans     &trans      &mo ADJ   &kp KP_N0  &trans
             >;
         };
 
@@ -202,10 +210,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-              &kp EXCL     &kp AT       &kp HASH   &kp DLLR  &kp PRCNT    &kp CARET     &kp AMPS          &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EQUAL
-              &kp RA(A)    &kp PIPE     &kp RA(S)  &kp COLON &kp UNDER    &kp C_MUTE    &kp C_PLAY_PAUSE  &kp RA(N5)            &kp RA(N4)             &kp RA(O)
-&kp QUESTION  &kp RA(F18)  &kp RA(F19)  &kp DQT    &trans    &trans       &kp C_VOL_DN  &kp C_VOL_UP      &kp C_PREV            &kp C_NEXT             &kp BSLH   &kp APOS
-                                        &trans     &gif      &mo ADJ      &trans        &kp C_PP          &trans
+              &kp EXCL     &kp AT       &kp HASH   &kp DLLR   &kp PRCNT    &kp CARET     &kp AMPS          &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EQUAL
+              &kp RA(A)    &kp PIPE     &kp RA(S)  &kp COLON  &kp UNDER    &kp C_MUTE    &kp C_PLAY_PAUSE  &kp RA(N5)            &kp RA(N4)             &kp RA(O)
+&kp QUESTION  &kp RA(F18)  &kp RA(F19)  &kp DQT    &trans     &trans       &kp C_VOL_DN  &kp C_VOL_UP      &kp C_PREV            &kp C_NEXT             &kp BSLH   &kp APOS
+                                        &trans     &gif       &mo ADJ      &trans        &kp C_PP          &trans
             >;
         };
 
