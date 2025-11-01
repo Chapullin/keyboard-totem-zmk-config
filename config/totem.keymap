@@ -163,6 +163,15 @@
                 <&kp LGUI &kp LSHFT>;
             label = "SCREENSHOT";
         };
+
+        panic: panic {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_release>,
+                <&kp LGUI &kp LALT &kp LCTRL &kp LSHFT>;
+            label = "PANIC";
+        };
     };
 
     keymap {
@@ -247,7 +256,7 @@
             label = "ADJ";
             // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
             //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-            //             ┃ SYS RESET ┃   TRANS   ┃  OUT TOG  ┃   TRANS   ┃ SCRN SHOT ┃   ┃   TRANS   ┃    F7     ┃    F8     ┃    F9     ┃    F12    ┃
+            //             ┃ SYS RESET ┃   TRANS   ┃  OUT TOG  ┃   PANIC   ┃ SCRN SHOT ┃   ┃   TRANS   ┃    F7     ┃    F8     ┃    F9     ┃    F12    ┃
             //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
             //             ┃ BOOTLOAD  ┃  BT NEXT  ┃   TRANS   ┃   TRANS   ┃   TRANS   ┃   ┃   TRANS   ┃    F4     ┃    F5     ┃    F6     ┃    F11    ┃
             // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
@@ -257,7 +266,7 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-        &sys_reset   &trans      &out OUT_TOG  &trans  &screenshot    &trans  &kp F7  &kp F8  &kp F9  &kp F12
+        &sys_reset   &trans      &out OUT_TOG  &panic  &screenshot    &trans  &kp F7  &kp F8  &kp F9  &kp F12
         &bootloader  &bt BT_NXT  &trans        &trans  &trans         &trans  &kp F4  &kp F5  &kp F6  &kp F11
 &trans  &bt BT_CLR   &bt BT_PRV  &trans        &trans  &trans         &trans  &kp F1  &kp F2  &kp F3  &kp F10  &trans
                                  &trans        &trans  &trans    &trans  &trans  &trans
