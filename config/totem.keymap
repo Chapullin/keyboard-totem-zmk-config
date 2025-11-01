@@ -172,6 +172,66 @@
                 <&kp LGUI &kp LALT &kp LCTRL &kp LSHFT>;
             label = "PANIC";
         };
+
+        sel_word_left: select_word_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings =
+                <&macro_press>,
+                <&kp LSHFT &kp LALT>,
+                <&macro_tap>,
+                <&kp LEFT>,
+                <&macro_release>,
+                <&kp LSHFT &kp LALT>;
+            label = "SELECT_WORD_LEFT";
+        };
+
+        sel_word_right: select_word_right {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings =
+                <&macro_press>,
+                <&kp LSHFT &kp LALT>,
+                <&macro_tap>,
+                <&kp RIGHT>,
+                <&macro_release>,
+                <&kp LSHFT &kp LALT>;
+            label = "SELECT_WORD_RIGHT";
+        };
+
+        sel_line_start: select_to_line_start {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings =
+                <&macro_press>,
+                <&kp LSHFT &kp LGUI>,
+                <&macro_tap>,
+                <&kp LEFT>,
+                <&macro_release>,
+                <&kp LSHFT &kp LGUI>;
+            label = "SELECT_LINE_START";
+        };
+
+        sel_line_end: select_to_line_end {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings =
+                <&macro_press>,
+                <&kp LSHFT &kp LGUI>,
+                <&macro_tap>,
+                <&kp RIGHT>,
+                <&macro_release>,
+                <&kp LSHFT &kp LGUI>;
+            label = "SELECT_LINE_END";
+        };
     };
 
     keymap {
@@ -208,19 +268,20 @@
             label = "NAVI";
             // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
             //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-            //             ┃    ESC    ┃     2     ┃     UP    ┃     =     ┃     {     ┃   ┃     }     ┃     7     ┃     8     ┃     9     ┃     +     ┃
+            //             ┃  SEL LIN  ┃  SEL LIN  ┃     UP    ┃  SEL WRD  ┃  SEL WRD  ┃   ┃   TRANS   ┃     7     ┃     8     ┃     9     ┃  KP_PLUS  ┃
+            //             ┃   START   ┃    END    ┃           ┃   LEFT    ┃   RIGHT   ┃   ┃           ┃           ┃           ┃           ┃           ┃
             //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-            //             ┃   SHIFT   ┃   LEFT    ┃    DOWN   ┃   RIGHT   ┃     [     ┃   ┃     ]     ┃     4     ┃     5     ┃     6     ┃     -     ┃
+            //             ┃   TRANS   ┃   LEFT    ┃    DOWN   ┃   RIGHT   ┃   TRANS   ┃   ┃   TRANS   ┃     4     ┃     5     ┃     6     ┃ KP_MINUS  ┃
             // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-            // ┃   TRANS   ┃    DEL    ┃   PG UP   ┃   CAPS    ┃  PG DOWN  ┃     (     ┃   ┃     )     ┃     1     ┃     2     ┃     3     ┃     *     ┃   TRANS   ┃
+            // ┃   TRANS   ┃   TRANS   ┃   TRANS   ┃   CAPS    ┃   TRANS   ┃   TRANS   ┃   ┃   TRANS   ┃     1     ┃     2     ┃     3     ┃KP_MULTIPLY┃   TRANS   ┃
             // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
             //                                     ┃   TRANS   ┃   TRANS   ┃   TRANS   ┃   ┃  ADJ LYR  ┃     0     ┃   TRANS   ┃
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-        &kp ESC    &kp NUMBER_2  &kp UP    &kp EQUAL  &kp LBRC    &kp RBRC  &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_PLUS
-        &kp LSHFT  &kp LEFT      &kp DOWN  &kp RIGHT  &kp LBKT    &kp RBKT  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_MINUS
-&trans  &kp DEL    &kp PG_UP     &kp CAPS  &kp PG_DN  &kp LPAR    &kp RPAR  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_MULTIPLY  &trans
+        &sel_line_start  &sel_line_end  &kp UP    &sel_word_left  &sel_word_right    &trans  &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_PLUS
+        &trans           &kp LEFT       &kp DOWN  &kp RIGHT       &trans             &trans  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_MINUS
+&trans  &trans           &trans         &kp CAPS  &trans          &trans             &trans  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_MULTIPLY  &trans
                                  &trans    &trans     &trans      &mo ADJ   &kp KP_N0  &trans
             >;
         };
