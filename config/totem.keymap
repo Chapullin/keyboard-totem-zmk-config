@@ -18,6 +18,7 @@
 #define NAV  1
 #define SYM  2
 #define ADJ  3
+#define SWAP 4
 
 &mt {
     quick-tap-ms = <150>;
@@ -100,6 +101,12 @@
             key-positions = <2 3>; // E+R combo for ´ (acute accent)
             timeout-ms = <25>;
             layers = <0>;
+        };
+
+        toggle_swap {
+            bindings = <&tog SWAP>;
+            key-positions = <32 37>; // DEL + BSPC to toggle SPACE/RETURN swap
+            timeout-ms = <50>;
         };
     };
 
@@ -257,7 +264,7 @@
            &kp Q       &kp W           &kp E        &kp R        &kp T        &kp Y    &kp U             &kp I        &kp O                &kp P
            &mt LGUI A  &mt LEFT_ALT S  &mt LCTRL D  &mt LSHFT F  &kp G        &kp H    &mt RSHFT J       &mt RCTRL K  &mt RALT L           &enie_cmd RGUI 0
 &kp MINUS  &kp Z       &kp X           &kp C        &kp V        &kp B        &kp N    &kp M             &kp COMMA    &kp DOT     &kp FSLH  &qm_semi
-                                       &kp DEL      &lt NAV TAB  &kp SPACE    &kp RET  &lt SYM NUMBER_0  &kp BSPC
+                                       &kp DEL      &lt NAV TAB  &kp RET      &kp SPACE  &lt SYM NUMBER_0  &kp BSPC
             >;
         };
 
@@ -331,6 +338,24 @@
         &bootloader  &bt BT_NXT  &trans        &trans  &trans         &trans  &kp F4  &kp F5  &kp F6  &kp F11
 &trans  &bt BT_CLR   &bt BT_PRV  &trans        &trans  &trans         &trans  &kp F1  &kp F2  &kp F3  &kp F10  &trans
                                  &trans        &trans  &trans    &trans  &trans  &trans
+            >;
+        };
+
+        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+        swap_layer {
+            // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+            label = "SWAP";
+            // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+            // TEST LAYER: Swaps SPACE (pos 34) and RETURN (pos 35)
+            // Toggle with DEL + BSPC combo
+            // All other keys fall through to BASE layer
+
+            bindings = <
+        &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+        &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &kp SPACE   &kp RET  &trans  &trans
             >;
         };
     };
