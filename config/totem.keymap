@@ -1,12 +1,12 @@
 //
-//                                                        ▀▀▀▀▀     ▀▀▀▀▀          ▀▀█▀▀
-//                                                        ▄▀▀▀▄  ▄  ▄▀▀▀▄  ▄  ▄▀▀▀▄  █  ▄▀▀▀▄
-//                                                        █   █  █  █   █  █  █   █  █  █   █
-//                                                         ▀▀▀   █   ▀▀▀   █   ▀▀▀   ▀   ▀▀▀
-//                                                               █      ▄▄▄█▄▄▄    █   █  
-//                                                               ▀      █  █  █     █▄█
-//                                                             ▀▀▀▀▀    █  █  █      ▀
-//                                                                      ▀  ▀  ▀
+//                                                         ▀▀▀▀▀     ▀▀▀▀▀          ▀▀█▀▀
+//                                                         ▄▀▀▀▄  ▄  ▄▀▀▀▄  ▄  ▄▀▀▀▄  █  ▄▀▀▀▄
+//                                                         █   █  █  █   █  █  █   █  █  █   █
+//                                                          ▀▀▀   █   ▀▀▀   █   ▀▀▀   ▀   ▀▀▀
+//                                                                █      ▄▄▄█▄▄▄    █   █  
+//                                                                ▀      █  █  █     █▄█
+//                                                              ▀▀▀▀▀    █  █  █      ▀
+//                                                                       ▀  ▀  ▀
 //
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 #include <behaviors.dtsi>
@@ -101,6 +101,12 @@
             key-positions = <2 3>; // E+R combo for ´ (acute accent)
             timeout-ms = <25>;
             layers = <0>;
+        };
+
+        cmd_apos_combo {
+            bindings = <&kp LG(APOS)>; // Command + ' 
+            key-positions = <35 36>; // ENTER + SYM/0 combo on thumb cluster
+            timeout-ms = <50>;
         };
 
         toggle_swap {
@@ -262,9 +268,9 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-           &kp Q       &kp W           &kp E        &kp R        &kp T        &kp Y    &kp U             &kp I        &kp O                &kp P
-           &mt LGUI A  &mt LEFT_ALT S  &mt LCTRL D  &mt LSHFT F  &kp G        &kp H    &mt RSHFT J       &mt RCTRL K  &mt RALT L           &enie_cmd RGUI 0
-&kp MINUS  &kp Z       &kp X           &kp C        &kp V        &kp B        &kp N    &kp M             &kp COMMA    &kp DOT     &kp FSLH  &qm_semi
+           &kp Q       &kp W           &kp E        &kp R        &kp T        &kp Y    &kp U              &kp I        &kp O                &kp P
+           &mt LGUI A  &mt LEFT_ALT S  &mt LCTRL D  &mt LSHFT F  &kp G        &kp H    &mt RSHFT J        &mt RCTRL K  &mt RALT L           &enie_cmd RGUI 0
+&kp MINUS  &kp Z       &kp X           &kp C        &kp V        &kp B        &kp N    &kp M              &kp COMMA    &kp DOT     &kp FSLH  &qm_semi
                                        &kp DEL      &lt NAV TAB  &kp SPACE    &kp RET  &lt SYM NUMBER_0  &kp BSPC
             >;
         };
